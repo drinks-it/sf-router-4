@@ -2,18 +2,13 @@
 
 namespace App\Controller;
 
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 
-class DefaultController
+class DefaultController extends AbstractController
 {
     public function index(): Response
     {
-        $number = random_int(0, 100);
-
-        $response = new Response(
-            '<html><body>Lucky number: '.$number.'</body></html>'
-        );
-//        $response->setStatusCode(404);
-        return $response;
+        return $this->render('base.html.twig');
     }
 }
