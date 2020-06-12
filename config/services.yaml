@@ -29,3 +29,11 @@ services:
     App\EventListener\RouterListener:
         arguments:
             $routerListener: '@router_listener'
+
+    App\Factory\ElasticsearchFactory:
+        arguments:
+            $url: '%env(string:ELASTIC_URL)%'
+
+    App\Factory\RedisFactory:
+        arguments:
+            $uri: '%env(string:REDIS_URI)%'

@@ -54,7 +54,7 @@ class Kernel extends BaseKernel
 
     public function getCacheDir()
     {
-        return $_SERVER['SF_VAR_DIR'].'/var/cache/'.$this->environment;
+        return $_SERVER['SF_VAR_DIR'].'/var/storefront/cache/'.$this->environment;
     }
 
     /**
@@ -62,6 +62,6 @@ class Kernel extends BaseKernel
      */
     public function getLogDir()
     {
-        return $_SERVER['SF_VAR_DIR'].'/var/log';
+        return $_SERVER['SF_VAR_DIR'].'/var/storefront/log';
     }
 }
