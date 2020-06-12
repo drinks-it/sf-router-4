@@ -36,7 +36,6 @@ class CategoryController extends AbstractController
         $es = $this->elasticsearchFactory->create();
         $hits = $es->search($params)['hits']['hits'];
         $products = array_column($hits, '_source');
-        var_dump($entityId, $request->getLocale(), $request->getPathInfo(), $hits, $products);
-        return $this->render('base.html.twig');
+        return $this->render('body/category.html.twig', ['products' => $products]);
     }
 }

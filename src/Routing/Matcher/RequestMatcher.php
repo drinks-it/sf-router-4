@@ -50,7 +50,7 @@ class RequestMatcher implements RequestMatcherInterface
     private function getRouteParameters($json): array
     {
         $data = json_decode($json, true);
-//        dd($data);
+
         switch ($data['entity']) {
             case 'category':
                 return [

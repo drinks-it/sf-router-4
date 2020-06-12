@@ -1,7 +1,21 @@
 {% apply spaceless %}
 <!DOCTYPE html>
 <html>
-    {% include 'head.html.twig' %}
-    {% include 'body.html.twig' %}
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, viewport-fit=cover" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <title>{% block title %}Welcome!{% endblock %}</title>
+        <link rel="stylesheet" type="text/css" href="http://localhost:1234/css/style.css" />
+        {% block stylesheets %}{% endblock %}
+    </head>
+    <body class="pb-16 sm:pb-0">
+        <div class="wrap">
+            {% include 'body/header.html.twig' %}
+            {% block body %}{% endblock %}
+            {% include 'body/footer.html.twig' %}
+        </div>
+    {% block javascripts %}{% endblock %}
+    </body>
 </html>
 {% endapply %}
